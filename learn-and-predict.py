@@ -17,15 +17,12 @@ print("Reading the UnLabelled file.")
 dfUnLabelled = pd.read_csv(path_to_UnLabelledcsv, sep=',', keep_default_na=False, na_values=['#N/A'])
 dataraw = pd.read_csv(path_to_trainingcsv, sep=',', keep_default_na=False, na_values=['#N/A'])
 
-YY = None
-DD = None
+# Variables used in processing function later.
 YScaler = None
 featSel=None
 t1, t2, t3, t4, t5 = None, None, None, None, None
 
-dataraw.isnull().any()
-
-
+# Expanded lambda to process strings, used in preprocessing
 def S2(s1):
     if (s1 is not None):
         return str(s1).replace(' ','')[:2]
